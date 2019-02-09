@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ParallecScrolling</title>
+
+</head>
+<style type="text/css">
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #image {
+    position: relative;
+    z-index: -1
+  }
+
+  #content {
+    height: 900px;
+    width: 100%;
+    margin-top: -10px;
+    background-image: url('https://source.unsplash.com/W5RuDkMkKzU/1600x900');
+    position: relative;
+    z-index: 1;
+  }
+</style>
+<script type="text/javascript">
+  var ypos, image;
+  function parallex() {
+    image = document.getElementById('image');
+    ypos = window.pageYOffset;
+    image.style.top = ypos * .7 + 'px';
+  }
+  window.addEventListener('scroll', parallex), false;
+
+</script>
+
+<body>
+  <img id="image" src="https://source.unsplash.com/NMbKKrLTI_k/1600x900" width="100%" />
+  <div id="content"></div>
+</body>
+
+</html>
